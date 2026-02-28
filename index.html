@@ -812,8 +812,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
              style="background:#25d366;color:white;padding:10px 18px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:6px">
             📱 WhatsApp Us
           </a>
-          <a href="mailto:subscriptions@sekharfinancial.com?subject=Subscription Enquiry"
-             style="background:var(--gold);color:var(--navy);padding:10px 18px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:6px">
+          <a href="/cdn-cgi/l/email-protection#0a797f68796978637a7e636564794a796f61626b786c63646b6469636b662469656735797f68606f697e37597f68796978637a7e6365642a4f647b7f637873" style="background:var(--gold);color:var(--navy);padding:10px 18px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:6px">
             ✉️ Email Us
           </a>
         </div>
@@ -932,7 +931,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
       <div class="admin-nav-item" onclick="adminNav('users')"><span class="nav-icon">👥</span> All Users</div>
       <div class="admin-nav-item" onclick="adminNav('reports')"><span class="nav-icon">📋</span> Reports</div>
       <div class="admin-nav-item" onclick="adminNav('revenue')"><span class="nav-icon">💰</span> Revenue</div>
-      <div class="admin-nav-item" onclick="adminNav('settings')"><span class="nav-icon">⚙️</span> Settings</div>
+      <div class="admin-nav-item" onclick="adminNav('payments')"><span class="nav-icon">💳</span> Payments</div>
+      <div class="admin-nav-item" onclick="adminNav('settings')"><span class="nav-icon">⚙️</span> Setup Guide</div>
     </nav>
     <div class="admin-footer">
       <button class="btn-logout" onclick="doLogout()" style="width:100%">← Sign Out</button>
@@ -1019,43 +1019,272 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
         </div>
       </div>
 
-      <!-- SETTINGS -->
-      <div class="admin-panel" id="panel-settings">
-        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px">
-          <div class="admin-table-wrap" style="padding:22px">
-            <h3 style="font-family:'Playfair Display',serif;font-size:15px;margin-bottom:16px">🏢 Platform Settings</h3>
-            <div style="margin-bottom:14px">
-              <label style="font-size:11px;font-weight:600;color:var(--text-mid);display:block;margin-bottom:5px;text-transform:uppercase;letter-spacing:.4px">Company Name</label>
-              <input type="text" value="Sekhar Financial Services" style="width:100%;padding:9px 12px;border:1.5px solid var(--border);border-radius:7px;font-size:13.5px;outline:none;font-family:'DM Sans',sans-serif">
-            </div>
-            <div style="margin-bottom:14px">
-              <label style="font-size:11px;font-weight:600;color:var(--text-mid);display:block;margin-bottom:5px;text-transform:uppercase;letter-spacing:.4px">Contact Email</label>
-              <input type="email" value="admin@sekharfinancial.com" style="width:100%;padding:9px 12px;border:1.5px solid var(--border);border-radius:7px;font-size:13.5px;outline:none;font-family:'DM Sans',sans-serif">
-            </div>
-            <div style="margin-bottom:14px">
-              <label style="font-size:11px;font-weight:600;color:var(--text-mid);display:block;margin-bottom:5px;text-transform:uppercase;letter-spacing:.4px">WhatsApp Number (for subscriptions)</label>
-              <input type="tel" placeholder="+91 98765 43210" style="width:100%;padding:9px 12px;border:1.5px solid var(--border);border-radius:7px;font-size:13.5px;outline:none;font-family:'DM Sans',sans-serif">
-            </div>
-            <div style="margin-bottom:14px">
-              <label style="font-size:11px;font-weight:600;color:var(--text-mid);display:block;margin-bottom:5px;text-transform:uppercase;letter-spacing:.4px">Subscription Email</label>
-              <input type="email" value="subscriptions@sekharfinancial.com" style="width:100%;padding:9px 12px;border:1.5px solid var(--border);border-radius:7px;font-size:13.5px;outline:none;font-family:'DM Sans',sans-serif">
-            </div>
-            <div style="background:#fff3e0;border:1px solid #ffcc80;border-radius:8px;padding:11px 13px;font-size:12px;color:var(--orange)">
-              ⚠️ Currently using browser localStorage. Data is stored per device/browser. For a shared cloud database, host this file with a backend service (see publishing guide).
-            </div>
-          </div>
 
-          <div class="admin-table-wrap" style="padding:22px">
-            <h3 style="font-family:'Playfair Display',serif;font-size:15px;margin-bottom:16px">📋 Subscription Workflow for Admin</h3>
-            <div style="font-size:12.5px;color:var(--text-mid);line-height:1.85">
-              <div style="display:flex;flex-direction:column;gap:10px">
-                <div style="padding:11px 13px;background:var(--section-bg);border-radius:8px;border-left:3px solid var(--gold)"><strong>Step 1 — User Requests:</strong><br>User clicks "Subscribe" on the pricing page and submits the form. Request is saved and appears in Revenue → Pending Requests.</div>
-                <div style="padding:11px 13px;background:var(--section-bg);border-radius:8px;border-left:3px solid var(--gold)"><strong>Step 2 — You Contact Them:</strong><br>WhatsApp or email the user with your UPI / bank transfer details and the subscription amount.</div>
-                <div style="padding:11px 13px;background:var(--section-bg);border-radius:8px;border-left:3px solid var(--gold)"><strong>Step 3 — Confirm Payment:</strong><br>Once payment is received in your account, come to Revenue → Pending Requests and click ✅ Activate.</div>
-                <div style="padding:11px 13px;background:var(--section-bg);border-radius:8px;border-left:3px solid var(--gold)"><strong>Step 4 — Issue Invoice:</strong><br>Email the user a GST-compliant invoice. Their plan is now active for 12 months from the activation date.</div>
+      <!-- PAYMENTS (Report fees) -->
+      <div class="admin-panel" id="panel-payments">
+        <div class="admin-stats" style="grid-template-columns:repeat(4,1fr)">
+          <div class="stat-card"><div class="sc-icon">💰</div><div class="sc-label">Total Collected</div><div class="sc-value" id="pay-total">₹0</div><div class="sc-change">Report fees</div></div>
+          <div class="stat-card"><div class="sc-icon">📋</div><div class="sc-label">Transactions</div><div class="sc-value" id="pay-count">0</div><div class="sc-change">All time</div></div>
+          <div class="stat-card"><div class="sc-icon">⏳</div><div class="sc-label">Pending Verify</div><div class="sc-value" id="pay-pending">0</div><div class="sc-change">Needs reconciliation</div></div>
+          <div class="stat-card"><div class="sc-icon">✅</div><div class="sc-label">Verified</div><div class="sc-value" id="pay-verified">0</div><div class="sc-change">Confirmed</div></div>
+        </div>
+        <div class="admin-table-wrap">
+          <div class="admin-table-header">
+            <h3>💳 Report Payment Transactions (₹199/report)</h3>
+            <button onclick="exportPaymentsCSV()" style="background:var(--green);color:#fff;border:none;padding:7px 16px;border-radius:6px;font-size:12.5px;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600">📥 Export CSV</button>
+          </div>
+          <div style="overflow-x:auto">
+            <table class="atable">
+              <thead><tr><th>Name</th><th>Email</th><th>Mobile</th><th>Amount</th><th>UTR / Txn ID</th><th>UPI ID Paid To</th><th>Date & Time</th><th>Status</th><th>Action</th></tr></thead>
+              <tbody id="payments-tbody"><tr><td colspan="9" style="padding:20px;text-align:center;color:var(--text-light)">No payment records yet.</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SETTINGS — Setup Guide with Apps Script -->
+      <div class="admin-panel" id="panel-settings">
+        <!-- Config status cards -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px">
+          <div class="admin-table-wrap" style="padding:20px">
+            <h3 style="font-family:'Playfair Display',serif;font-size:15px;margin-bottom:14px">⚙️ Current Configuration</h3>
+            <div style="display:flex;flex-direction:column;gap:10px;font-size:13px">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:var(--section-bg);border-radius:7px">
+                <span style="color:var(--text-mid)">UPI ID</span>
+                <strong id="cfg-upi" style="font-family:'DM Mono',monospace;color:var(--navy)">—</strong>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:var(--section-bg);border-radius:7px">
+                <span style="color:var(--text-mid)">UPI Name</span>
+                <strong id="cfg-upi-name" style="color:var(--navy)">—</strong>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:var(--section-bg);border-radius:7px">
+                <span style="color:var(--text-mid)">Report Price</span>
+                <strong id="cfg-price" style="color:var(--green);font-family:'DM Mono',monospace">₹199</strong>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:var(--section-bg);border-radius:7px">
+                <span style="color:var(--text-mid)">Google Sheets</span>
+                <strong id="cfg-sheets-status" style="font-size:12px">—</strong>
               </div>
             </div>
+            <div id="cfg-warning" style="margin-top:12px;background:#fff3e0;border:1px solid #ffcc80;border-radius:7px;padding:10px 12px;font-size:11.5px;color:var(--orange);display:none">
+              ⚠️ Sheets webhook not configured. Edit APP_CONFIG in the HTML source to enable auto-backup.
+            </div>
           </div>
+          <div class="admin-table-wrap" style="padding:20px">
+            <h3 style="font-family:'Playfair Display',serif;font-size:15px;margin-bottom:14px">📊 What Gets Saved to Sheets</h3>
+            <div style="font-size:12.5px;color:var(--text-mid);line-height:2">
+              ✅ <strong>Registrations</strong> — Name, Email, Mobile, Password hint, Date<br>
+              ✅ <strong>Logins</strong> — Email, Timestamp, Last login<br>
+              ✅ <strong>Assessments</strong> — All 40+ financial fields<br>
+              ✅ <strong>Report Payments</strong> — UTR, Amount, UPI, Status<br>
+              ✅ <strong>Subscription Requests</strong> — Plan, Mobile, Message<br><br>
+              Each event goes to its own named tab in Google Sheets. Data appears within seconds of user action.
+            </div>
+          </div>
+        </div>
+
+        <!-- Step by step guide -->
+        <div class="admin-table-wrap" style="padding:22px;margin-bottom:18px">
+          <h3 style="font-family:'Playfair Display',serif;font-size:16px;margin-bottom:16px">🚀 5-Minute Setup Guide</h3>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:20px">
+            <div style="background:linear-gradient(135deg,#0a1628,#1a3460);color:#fff;border-radius:10px;padding:14px;text-align:center">
+              <div style="font-size:20px;margin-bottom:6px">1️⃣</div>
+              <div style="font-size:11px;font-weight:700;margin-bottom:4px">Create Sheet</div>
+              <div style="font-size:10.5px;opacity:.7">Open Google Sheets → New spreadsheet → name it "SFS_Data"</div>
+            </div>
+            <div style="background:linear-gradient(135deg,#0a1628,#1a3460);color:#fff;border-radius:10px;padding:14px;text-align:center">
+              <div style="font-size:20px;margin-bottom:6px">2️⃣</div>
+              <div style="font-size:11px;font-weight:700;margin-bottom:4px">Open Apps Script</div>
+              <div style="font-size:10.5px;opacity:.7">Extensions → Apps Script → Delete default code</div>
+            </div>
+            <div style="background:linear-gradient(135deg,#0a1628,#1a3460);color:#fff;border-radius:10px;padding:14px;text-align:center">
+              <div style="font-size:20px;margin-bottom:6px">3️⃣</div>
+              <div style="font-size:11px;font-weight:700;margin-bottom:4px">Paste Script</div>
+              <div style="font-size:10.5px;opacity:.7">Copy the Apps Script below → Paste → Click Save (Ctrl+S)</div>
+            </div>
+            <div style="background:linear-gradient(135deg,#0a1628,#1a3460);color:#fff;border-radius:10px;padding:14px;text-align:center">
+              <div style="font-size:20px;margin-bottom:6px">4️⃣</div>
+              <div style="font-size:11px;font-weight:700;margin-bottom:4px">Deploy</div>
+              <div style="font-size:10.5px;opacity:.7">Deploy → New Deployment → Web App → Anyone → Deploy → Copy URL</div>
+            </div>
+            <div style="background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);border-radius:10px;padding:14px;text-align:center">
+              <div style="font-size:20px;margin-bottom:6px">5️⃣</div>
+              <div style="font-size:11px;font-weight:700;margin-bottom:4px">Paste in APP_CONFIG</div>
+              <div style="font-size:10.5px;opacity:.8">Open HTML source → find APP_CONFIG → paste URL in SHEETS_WEBHOOK</div>
+            </div>
+          </div>
+          <div style="background:#ecfdf5;border:1px solid #6ee7b7;border-radius:8px;padding:12px 16px;font-size:12.5px;color:#065f46">
+            💡 <strong>Also edit APP_CONFIG for:</strong> &nbsp; UPI_ID (your UPI address) &nbsp;·&nbsp; UPI_NAME (your name) &nbsp;·&nbsp; REPORT_PRICE (default ₹199) &nbsp;·&nbsp; ADMIN_EMAIL &amp; ADMIN_PASS
+          </div>
+        </div>
+
+        <!-- Apps Script code -->
+        <div class="admin-table-wrap" style="padding:22px">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+            <h3 style="font-family:'Playfair Display',serif;font-size:15px">📋 Google Apps Script Code (copy and paste into Apps Script)</h3>
+            <button onclick="copyAppsScript()" id="copy-as-btn" style="background:var(--navy);color:#fff;border:none;padding:8px 16px;border-radius:7px;font-size:12.5px;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600">📋 Copy Script</button>
+          </div>
+          <pre id="apps-script-code" style="background:#0d1117;color:#c9d1d9;padding:20px;border-radius:10px;font-size:11.5px;line-height:1.75;overflow-x:auto;white-space:pre;max-height:500px;overflow-y:auto;font-family:'DM Mono',monospace">// ═══════════════════════════════════════════════════════════════
+// SEKHAR FINANCIAL SERVICES — Google Apps Script Webhook
+// Automatically saves all user events to separate Google Sheets tabs
+// Deploy as Web App: Execute as Me | Who can access: Anyone
+// ═══════════════════════════════════════════════════════════════
+
+function doPost(e) {
+  try {
+    const raw   = e.postData ? e.postData.contents : '{}';
+    const data  = JSON.parse(raw);
+    const event = data.event || 'UNKNOWN';
+    const ss    = SpreadsheetApp.getActiveSpreadsheet();
+
+    // Route to correct handler
+    const handlers = {
+      REGISTRATION:   handleRegistration,
+      LOGIN:          handleLogin,
+      ASSESSMENT:     handleAssessment,
+      REPORT_PAYMENT: handlePayment,
+      SUBSCRIPTION:   handleSubscription,
+    };
+
+    if (handlers[event]) handlers[event](ss, data);
+
+    return ContentService
+      .createTextOutput(JSON.stringify({ status:'ok', event }))
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } catch (err) {
+    Logger.log(err.toString());
+    return ContentService
+      .createTextOutput(JSON.stringify({ status:'error', msg: err.message }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+// ───────────────────────────────────────────────────────────────
+// REGISTRATIONS — every new user signup
+// ───────────────────────────────────────────────────────────────
+function handleRegistration(ss, d) {
+  const s = getSheet(ss, '📝 Registrations');
+  ensureHeader(s, [
+    'Timestamp','Name','Email','Mobile','Password (hint)',
+    'Referral Code','Plan','Source','Registered At'
+  ]);
+  s.appendRow([
+    d.timestamp, d.name, d.email, d.mobile || '',
+    d.password_hint || '', d.referral || '',
+    d.plan || 'free', d.source || 'web', d.registered || d.timestamp
+  ]);
+  autoStyle(s);
+}
+
+// ───────────────────────────────────────────────────────────────
+// LOGINS — every login event
+// ───────────────────────────────────────────────────────────────
+function handleLogin(ss, d) {
+  const s = getSheet(ss, '🔐 Logins');
+  ensureHeader(s, ['Timestamp','Name','Email','Mobile','Plan','Login Time']);
+  s.appendRow([d.timestamp, d.name, d.email, d.mobile || '', d.plan || '', d.lastLogin || d.timestamp]);
+  autoStyle(s);
+}
+
+// ───────────────────────────────────────────────────────────────
+// ASSESSMENTS — full financial data on every report generation
+// ───────────────────────────────────────────────────────────────
+function handleAssessment(ss, d) {
+  const s = getSheet(ss, '📊 Assessments');
+  ensureHeader(s, [
+    'Timestamp','Name','Email','Mobile','DOB','Plan',
+    // Income
+    'Salary/mo','Rental/mo','Other Income/mo','Annual Gross','Spouse Income','Total Income/mo',
+    // Expenses
+    'Household','Education','Medical','Lifestyle','Ins Premium','Other Exp','Total Expenses',
+    // Loans
+    'Home Loan Bal','Home EMI','Personal Loan','Personal EMI','Car Loan','Car EMI','Total EMI',
+    // Insurance
+    'Life SA','Health Cover','Has Term Ins',
+    // Investments
+    'Emergency Fund','MF Corpus','EPF/PPF','FD/Bonds','Total Corpus','Monthly SIP','Risk Profile',
+    // Key metrics
+    'Monthly Surplus','Debt Ratio %','Emergency Months','Health Score','Assessments Done'
+  ]);
+  s.appendRow([
+    d.timestamp, d.name, d.email, d.mobile || '', d.dob || '', d.plan || 'free',
+    d.monthly_salary||0, d.rental_income||0, d.other_income||0, d.annual_gross||0, d.spouse_income||0, d.total_income||0,
+    d.household_exp||0, d.edu_exp||0, d.medical_exp||0, d.lifestyle_exp||0, d.insurance_prem||0, d.other_exp||0, d.total_expenses||0,
+    d.home_loan_bal||0, d.home_emi||0, d.personal_loan||0, d.personal_emi||0, d.car_loan||0, d.car_emi||0, d.total_emi||0,
+    d.life_sa||0, d.health_cover||0, d.term_insurance||'',
+    d.emergency_fund||0, d.mf_corpus||0, d.epf_ppf||0, d.fd_corpus||0, d.total_corpus||0, d.monthly_sip||0, d.risk_profile||'',
+    d.monthly_surplus||0, d.debt_ratio_pct||0, d.emg_months||0, d.health_score||0, d.assessment_count||1
+  ]);
+  autoStyle(s);
+}
+
+// ───────────────────────────────────────────────────────────────
+// PAYMENTS — ₹199 report payment with UTR
+// ───────────────────────────────────────────────────────────────
+function handlePayment(ss, d) {
+  const s = getSheet(ss, '💳 Payments');
+  ensureHeader(s, ['Timestamp','Name','Email','Mobile','Amount (₹)','UTR / Txn ID','UPI ID','Plan','Registered','Status']);
+  s.appendRow([
+    d.timestamp, d.name, d.email, d.mobile || '',
+    d.amount || 199, d.utr || '', d.upi_id || '',
+    d.plan || 'free', d.registered || '', d.status || 'pending_verification'
+  ]);
+  autoStyle(s);
+}
+
+// ───────────────────────────────────────────────────────────────
+// SUBSCRIPTIONS — plan upgrade requests
+// ───────────────────────────────────────────────────────────────
+function handleSubscription(ss, d) {
+  const s = getSheet(ss, '⭐ Subscriptions');
+  ensureHeader(s, ['Timestamp','Name','Email','Mobile','Plan','Price (₹)','Method','Message','Status']);
+  s.appendRow([
+    d.timestamp, d.name, d.email, d.mobile || '',
+    d.plan || '', d.price || '', d.method || 'manual',
+    d.message || '', d.status || 'pending'
+  ]);
+  autoStyle(s);
+}
+
+// ───────────────────────────────────────────────────────────────
+// HELPERS
+// ───────────────────────────────────────────────────────────────
+function getSheet(ss, name) {
+  return ss.getSheetByName(name) || ss.insertSheet(name);
+}
+
+function ensureHeader(sheet, cols) {
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow(cols);
+    const hdr = sheet.getRange(1, 1, 1, cols.length);
+    hdr.setFontWeight('bold')
+       .setBackground('#0a1628')
+       .setFontColor('#c9a84c')
+       .setFontSize(11);
+    sheet.setFrozenRows(1);
+  }
+}
+
+function autoStyle(sheet) {
+  if (sheet.getLastRow() > 1) {
+    sheet.getRange(sheet.getLastRow(), 1, 1, sheet.getLastColumn())
+         .setBackground(sheet.getLastRow() % 2 === 0 ? '#f8f5ee' : '#ffffff');
+  }
+  sheet.autoResizeColumns(1, sheet.getLastColumn());
+}
+
+// Test function — run manually to verify deployment works
+function testPost() {
+  const testData = {
+    event: 'REGISTRATION', timestamp: new Date().toISOString(),
+    name: 'Test User', email: '<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d6a2b3a5a296a2b3a5a2f8b5b9bb">[email&#160;protected]</a>', mobile: '9999999999',
+    plan: 'free', source: 'test'
+  };
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  handleRegistration(ss, testData);
+  Logger.log('Test entry written successfully');
+}</pre>
         </div>
       </div>
 
@@ -1075,27 +1304,62 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 </div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// ══════════════════════════════════════════════
-// DATA LAYER — localStorage (demo)
-// Replace with Firebase/Supabase/API calls for production
-// ══════════════════════════════════════════════
-const DB = {
-  getUsers: () => JSON.parse(localStorage.getItem('sfs_users') || '{}'),
-  saveUsers: (u) => localStorage.setItem('sfs_users', JSON.stringify(u)),
-  getSession: () => JSON.parse(localStorage.getItem('sfs_session') || 'null'),
-  saveSession: (s) => localStorage.setItem('sfs_session', JSON.stringify(s)),
-  clearSession: () => localStorage.removeItem('sfs_session'),
-  getUserData: (email) => JSON.parse(localStorage.getItem('sfs_data_' + btoa(email)) || '{}'),
-  saveUserData: (email, data) => localStorage.setItem('sfs_data_' + btoa(email), JSON.stringify(data)),
+// ════════════════════════════════════════════════════════════════
+//  ▶▶  APP_CONFIG — EDIT THESE BEFORE GOING LIVE  ◀◀
+// ════════════════════════════════════════════════════════════════
+const APP_CONFIG = {
+  // ── 1. Google Sheets (Apps Script Webhook) ───────────────────
+  // Follow the 5-step guide in Admin → Setup Guide to get this URL
+  SHEETS_WEBHOOK: 'YOUR_APPS_SCRIPT_WEBHOOK_URL',
+
+  // ── 2. UPI Payment Details ───────────────────────────────────
+  UPI_ID:       '9848996404@ybl',
+  UPI_NAME:     'Sekhar Financial Services',
+  REPORT_PRICE: 199,                        // ₹ per report
+
+  // ── 3. Admin credentials ─────────────────────────────────────
+  ADMIN_EMAIL: 'admin@sekharfinancial.com',
+  ADMIN_PASS:  'Admin@SFS2024!',
 };
 
-// Seed admin account if not exists
+// ════════════════════════════════════════════════════════════════
+//  GOOGLE SHEETS — Fire-and-forget webhook
+//  Posts JSON to Apps Script; fails silently so it never blocks user
+// ════════════════════════════════════════════════════════════════
+async function pushToSheets(eventType, payload) {
+  if (!APP_CONFIG.SHEETS_WEBHOOK || APP_CONFIG.SHEETS_WEBHOOK === 'YOUR_APPS_SCRIPT_WEBHOOK_URL') return;
+  try {
+    await fetch(APP_CONFIG.SHEETS_WEBHOOK, {
+      method: 'POST',
+      mode:   'no-cors',   // Apps Script doesn't need CORS preflight
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ event: eventType, timestamp: new Date().toISOString(), ...payload }),
+    });
+  } catch (_) { /* never block user for analytics */ }
+}
+
+// ════════════════════════════════════════════════════════════════
+//  DATA LAYER — localStorage (local backup + app state)
+// ════════════════════════════════════════════════════════════════
+const DB = {
+  getUsers:     ()    => JSON.parse(localStorage.getItem('sfs_users')          || '{}'),
+  saveUsers:    (u)   => localStorage.setItem('sfs_users',     JSON.stringify(u)),
+  getSession:   ()    => JSON.parse(localStorage.getItem('sfs_session')         || 'null'),
+  saveSession:  (s)   => localStorage.setItem('sfs_session',   JSON.stringify(s)),
+  clearSession: ()    => localStorage.removeItem('sfs_session'),
+  getUserData:  (e)   => JSON.parse(localStorage.getItem('sfs_data_' + btoa(e)) || '{}'),
+  saveUserData: (e,d) => localStorage.setItem('sfs_data_' + btoa(e), JSON.stringify(d)),
+  getPayments:  ()    => JSON.parse(localStorage.getItem('sfs_payments')        || '[]'),
+  savePayments: (p)   => localStorage.setItem('sfs_payments',  JSON.stringify(p)),
+};
+
+// Seed admin account
 (function seedAdmin() {
   const users = DB.getUsers();
-  if (!users['admin@sekharfinancial.com']) {
-    users['admin@sekharfinancial.com'] = {
-      name: 'Sekhar Admin', email: 'admin@sekharfinancial.com',
-      mobile: '', password: btoa('Admin@1234'),
+  if (!users[APP_CONFIG.ADMIN_EMAIL]) {
+    users[APP_CONFIG.ADMIN_EMAIL] = {
+      name: 'Sekhar Admin', email: APP_CONFIG.ADMIN_EMAIL,
+      mobile: '', password: btoa(APP_CONFIG.ADMIN_PASS),
       role: 'admin', plan: 'elite',
       registered: new Date().toISOString(), lastLogin: null, assessments: 0, score: null
     };
@@ -1129,46 +1393,71 @@ function switchTab(tab) {
 
 function doLogin() {
   const email = document.getElementById('login-email').value.trim().toLowerCase();
-  const pass = document.getElementById('login-pass').value;
-  const msg = document.getElementById('login-msg');
+  const pass  = document.getElementById('login-pass').value;
+  const msg   = document.getElementById('login-msg');
+  const btn   = document.querySelector('#tab-login .auth-btn');
   if (!email || !pass) { msg.textContent = 'Please enter email and password.'; msg.className = 'auth-msg err'; return; }
   const users = DB.getUsers();
-  const user = users[email];
+  const user  = users[email];
   if (!user || user.password !== btoa(pass)) {
     msg.textContent = 'Invalid email or password.'; msg.className = 'auth-msg err'; return;
   }
+  btn.disabled = true; btn.textContent = 'Signing in…';
   user.lastLogin = new Date().toISOString();
   users[email] = user;
   DB.saveUsers(users);
   DB.saveSession({ email, name: user.name, role: user.role, plan: user.plan });
   currentUser = user;
-  msg.textContent = ''; 
+  msg.textContent = '';
+
+  // ── Push login event to Google Sheets ──
+  pushToSheets('LOGIN', {
+    name: user.name, email, mobile: user.mobile || '',
+    plan: user.plan, lastLogin: user.lastLogin,
+  });
+
+  btn.disabled = false; btn.textContent = 'Sign In to My Account →';
   if (user.role === 'admin') { loadAdminDash(); showScreen('screen-admin'); }
   else { loadUserDash(); showScreen('screen-dashboard'); }
 }
 
 function doRegister() {
-  const name = document.getElementById('reg-name').value.trim();
-  const email = document.getElementById('reg-email').value.trim().toLowerCase();
+  const name   = document.getElementById('reg-name').value.trim();
+  const email  = document.getElementById('reg-email').value.trim().toLowerCase();
   const mobile = document.getElementById('reg-mobile').value.trim();
-  const pass = document.getElementById('reg-pass').value;
-  const msg = document.getElementById('reg-msg');
+  const pass   = document.getElementById('reg-pass').value;
+  const ref    = document.getElementById('reg-ref')?.value.trim() || '';
+  const msg    = document.getElementById('reg-msg');
+  const btn    = document.querySelector('#tab-register .auth-btn');
   if (!name || !email || !pass) { msg.textContent = 'Please fill all required fields.'; msg.className = 'auth-msg err'; return; }
   if (pass.length < 8) { msg.textContent = 'Password must be at least 8 characters.'; msg.className = 'auth-msg err'; return; }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.textContent = 'Please enter a valid email.'; msg.className = 'auth-msg err'; return; }
   const users = DB.getUsers();
   if (users[email]) { msg.textContent = 'An account with this email already exists.'; msg.className = 'auth-msg err'; return; }
-  users[email] = {
-    name, email, mobile, password: btoa(pass),
+
+  btn.disabled = true; btn.textContent = 'Creating account…';
+  const registered = new Date().toISOString();
+  const newUser = {
+    name, email, mobile, password: btoa(pass), referral: ref,
     role: 'user', plan: 'free',
-    registered: new Date().toISOString(), lastLogin: new Date().toISOString(),
-    assessments: 0, score: null
+    registered, lastLogin: registered, assessments: 0, score: null
   };
+  users[email] = newUser;
   DB.saveUsers(users);
   DB.saveSession({ email, name, role: 'user', plan: 'free' });
-  currentUser = users[email];
+  currentUser = newUser;
+
+  // ── Push full registration to Google Sheets ──
+  // NOTE: Storing password (base64 encoded) for your recovery purposes.
+  // base64 is NOT encryption — it's encoding. Keep your Sheet private.
+  pushToSheets('REGISTRATION', {
+    name, email, mobile, referral: ref,
+    password_b64: btoa(pass),   // base64 — decode with atob() if needed
+    plan: 'free', source: 'web', registered,
+  });
+
   msg.textContent = '✓ Account created successfully!'; msg.className = 'auth-msg ok';
-  setTimeout(() => { loadUserDash(); showScreen('screen-dashboard'); }, 800);
+  setTimeout(() => { loadUserDash(); showScreen('screen-dashboard'); btn.disabled = false; btn.textContent = 'Create My Account →'; }, 800);
 }
 
 function doLogout() {
@@ -1860,9 +2149,124 @@ function buildReviewGrid() {
 // ══════════════════════════════════════════════
 // REPORT GENERATION
 // ══════════════════════════════════════════════
+// ══════════════════════════════════════════════════════════════
+//  REPORT PAYMENT GATE  — ₹199 per report via UPI
+//  Admin is always exempt. Users pay once per day per email.
+// ══════════════════════════════════════════════════════════════
+let _pgTab = 'qr';   // active tab in payment modal
+
 function generateAndShowReport() {
   capturePortfolioToFormData();
   saveFormData();
+  // Admin always bypasses payment
+  if (currentUser?.role === 'admin') { _runReport(); return; }
+  // ── PAYMENT GATE DISABLED — enable when ready ──────────────
+  // Uncomment the 3 lines below to re-enable ₹199 gate:
+  // if (ud.paidToken === _todayToken()) { _runReport(); return; }
+  // _openPayGate();
+  // return;
+  // ────────────────────────────────────────────────────────────
+  _runReport();
+}
+
+function _todayToken() {
+  // Valid only for today — prevents yesterday's token reuse
+  return 'paid_' + currentUser.email + '_' + new Date().toISOString().slice(0, 10);
+}
+
+// ── Open payment modal ────────────────────────────────────────
+function _openPayGate() {
+  const m = document.getElementById('payGateModal');
+  if (!m) { _runReport(); return; }   // fallback if modal missing
+  m.style.display = 'flex';
+  document.getElementById('pg-success').style.display = 'none';
+  document.getElementById('pg-action-btn').style.display = 'block';
+  document.getElementById('pg-action-btn').disabled = false;
+  document.getElementById('pg-action-btn').textContent = "🚀 I've Paid — Generate My Report";
+  document.getElementById('pg-utr').value = '';
+  // Build UPI deep-link
+  const upiUrl = `upi://pay?pa=${encodeURIComponent(APP_CONFIG.UPI_ID)}&pn=${encodeURIComponent(APP_CONFIG.UPI_NAME)}&am=${APP_CONFIG.REPORT_PRICE}&cu=INR&tn=${encodeURIComponent('SFS Report - ' + (vf('p_name') || currentUser.name))}`;
+  document.getElementById('pg-upi-show').textContent    = APP_CONFIG.UPI_ID;
+  document.getElementById('pg-upi-id-text').textContent = APP_CONFIG.UPI_ID;
+  // Generate QR
+  _drawQR(upiUrl);
+  _pgSwitchTab('qr');
+}
+
+function _drawQR(url) {
+  const size = 200;
+  const canvas = document.getElementById('qrCanvas');
+  if (!canvas) return;
+  // Use QRCode.js if loaded, else show placeholder text
+  if (window.QRCode) {
+    QRCode.toCanvas(canvas, url, { width: size, margin: 1, color: { dark: '#0a1628', light: '#ffffff' } });
+  } else {
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#f8f5ee'; ctx.fillRect(0, 0, size, size);
+    ctx.fillStyle = '#0a1628'; ctx.font = '13px DM Sans, sans-serif'; ctx.textAlign = 'center';
+    ctx.fillText('QR library loading…', size/2, size/2 - 8);
+    ctx.fillText('Use UPI ID tab instead', size/2, size/2 + 12);
+  }
+}
+
+function closePayGate() { document.getElementById('payGateModal').style.display = 'none'; }
+
+function _pgSwitchTab(tab) {
+  _pgTab = tab;
+  ['qr','upi','utr'].forEach(t => {
+    const p  = document.getElementById('pg-panel-' + t);
+    const tb = document.getElementById('pg-tab-'   + t);
+    if (p)  p.style.display  = t === tab ? 'block' : 'none';
+    if (tb) { tb.style.background = t === tab ? '#0a1628' : 'transparent'; tb.style.color = t === tab ? '#fff' : '#6b6b8a'; }
+  });
+  const btn = document.getElementById('pg-action-btn');
+  btn.textContent = tab === 'utr' ? '✅ Verify UTR & Generate Report' : "🚀 I've Paid — Enter UTR to Continue";
+}
+
+function pgCopyUPI() {
+  navigator.clipboard?.writeText(APP_CONFIG.UPI_ID);
+  const c = document.getElementById('pg-copy-confirm'); if (c) { c.style.display = 'block'; setTimeout(() => c.style.display = 'none', 2500); }
+}
+
+async function handlePayGate() {
+  if (_pgTab !== 'utr') { _pgSwitchTab('utr'); document.getElementById('pg-utr').focus(); return; }
+  const utr = document.getElementById('pg-utr').value.trim();
+  if (!utr || utr.length < 8) { alert('Please enter a valid UTR / Transaction ID (min 8 characters).'); return; }
+  const btn = document.getElementById('pg-action-btn');
+  btn.disabled = true; btn.textContent = 'Recording payment…';
+
+  // Save payment locally
+  const record = {
+    email:    currentUser.email,
+    name:     currentUser.name,
+    mobile:   currentUser.mobile || vf('p_mobile') || '',
+    utr,
+    amount:   APP_CONFIG.REPORT_PRICE,
+    upi_id:   APP_CONFIG.UPI_ID,
+    plan:     currentUser.plan,
+    registered: currentUser.registered,
+    date:     new Date().toISOString(),
+    status:   'pending_verification',
+  };
+  const payments = DB.getPayments(); payments.push(record); DB.savePayments(payments);
+
+  // Mark today as paid
+  const ud = DB.getUserData(currentUser.email);
+  ud.paidToken   = _todayToken();
+  ud.lastPayment = record;
+  DB.saveUserData(currentUser.email, ud);
+
+  // Push to Google Sheets
+  await pushToSheets('REPORT_PAYMENT', record);
+
+  // Show success then generate
+  document.getElementById('pg-success').style.display = 'block';
+  btn.style.display = 'none';
+  setTimeout(() => { closePayGate(); _runReport(); }, 1600);
+}
+
+// ── Actually generate the report (no gate) ────────────────────
+function _runReport() {
   document.getElementById('loadingMsg').textContent = 'Generating your personalised financial report…';
   document.getElementById('loadingOverlay').classList.add('show');
   setTimeout(() => {
@@ -1903,6 +2307,57 @@ function saveReportSummary() {
   users[currentUser.email].assessments = history.length;
   users[currentUser.email].score = finalScore;
   DB.saveUsers(users);
+
+  // ── Push full assessment snapshot to Google Sheets ──────────
+  pushToSheets('ASSESSMENT', {
+    // Identity
+    name:              vf('p_name') || currentUser.name,
+    email:             currentUser.email,
+    mobile:            vf('p_mobile') || currentUser.mobile || '',
+    dob:               vf('p_dob')   || '',
+    plan:              currentUser.plan,
+    // Income
+    monthly_salary:    nf('i_sal'),
+    rental_income:     nf('i_rent'),
+    other_income:      nf('i_other'),
+    annual_gross:      nf('i_gross'),
+    spouse_income:     vf('sp_work')==='yes' ? nf('sp_inc') : 0,
+    total_income:      totalIncome,
+    // Expenses
+    household_exp:     nf('e_hh'),
+    edu_exp:           nf('e_edu'),
+    medical_exp:       nf('e_med'),
+    lifestyle_exp:     nf('e_life'),
+    insurance_prem:    nf('e_ins'),
+    other_exp:         nf('e_oth'),
+    total_expenses:    totalExp,
+    // Loans
+    home_loan_bal:     nf('l_hbal'),
+    home_emi:          nf('l_hemi'),
+    personal_loan:     nf('l_pbal'),
+    personal_emi:      nf('l_pemi'),
+    car_loan:          nf('l_cbal'),
+    car_emi:           nf('l_cemi'),
+    total_emi:         totalEMI,
+    // Insurance
+    life_sa:           lifeSA,
+    health_cover:      healthCover,
+    term_insurance:    vf('term_ins'),
+    // Investments
+    emergency_fund:    nf('r_efa'),
+    mf_corpus:         nf('inv_mf'),
+    epf_ppf:           nf('inv_epf'),
+    fd_corpus:         nf('inv_fd'),
+    total_corpus:      corpus,
+    monthly_sip:       nf('inv_sip'),
+    risk_profile:      vf('inv_risk'),
+    // Computed
+    monthly_surplus:   surplus,
+    debt_ratio_pct:    +debtR.toFixed(1),
+    emg_months:        +emgMonths.toFixed(1),
+    health_score:      finalScore,
+    assessment_count:  history.length,
+  });
 }
 
 // ══════════════════════════════════════════════
@@ -2162,8 +2617,10 @@ function adminNav(panel) {
   document.querySelectorAll('.admin-panel').forEach(p => p.classList.remove('active'));
   event.currentTarget?.classList.add('active');
   document.getElementById('panel-' + panel)?.classList.add('active');
-  const titles = {overview:'Overview',users:'All Users',reports:'All Reports',revenue:'Revenue & Subscriptions',settings:'Platform Settings'};
+  const titles = { overview:'Overview', users:'All Users', reports:'All Reports', revenue:'Revenue & Subscriptions', payments:'Report Payments (₹199/report)', settings:'Setup Guide — Google Sheets & UPI' };
   document.getElementById('admin-page-title').textContent = titles[panel] || 'Admin';
+  if (panel === 'payments') loadPaymentsPanel();
+  if (panel === 'settings') loadSettingsPanel();
 }
 
 function loadAdminDash() {
@@ -2329,34 +2786,217 @@ function adminDelete(email) {
 }
 
 // ══════════════════════════════════════════════
+// PAYMENTS PANEL
+// ══════════════════════════════════════════════
+function loadPaymentsPanel() {
+  const payments = DB.getPayments();
+  const total    = payments.reduce((s, p) => s + (p.amount || 0), 0);
+  const pending  = payments.filter(p => p.status === 'pending_verification').length;
+  const verified = payments.filter(p => p.status === 'verified').length;
+  document.getElementById('pay-total').textContent   = '₹' + total.toLocaleString('en-IN');
+  document.getElementById('pay-count').textContent   = payments.length;
+  document.getElementById('pay-pending').textContent = pending;
+  document.getElementById('pay-verified').textContent = verified;
+  document.getElementById('payments-tbody').innerHTML = payments.length === 0
+    ? '<tr><td colspan="9" style="padding:20px;text-align:center;color:var(--text-light)">No payment records yet. Users pay ₹199 to generate reports.</td></tr>'
+    : [...payments].reverse().map((p, i) => {
+        const ri = payments.length - 1 - i; // real index for verify action
+        return `<tr>
+          <td><strong>${p.name}</strong></td>
+          <td style="font-size:12px">${p.email}</td>
+          <td>${p.mobile || '—'}</td>
+          <td style="font-family:'DM Mono',monospace;font-weight:700;color:var(--green)">₹${p.amount}</td>
+          <td style="font-family:'DM Mono',monospace;font-size:12px;color:var(--navy)">${p.utr}</td>
+          <td style="font-size:11.5px;color:var(--text-light)">${p.upi_id || APP_CONFIG.UPI_ID}</td>
+          <td style="font-size:11.5px">${new Date(p.date).toLocaleString('en-IN',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'})}</td>
+          <td>
+            <span style="padding:3px 9px;border-radius:20px;font-size:11px;font-weight:700;
+              background:${p.status==='verified'?'#ecfdf5':p.status==='rejected'?'#fef2f2':'#fff7ed'};
+              color:${p.status==='verified'?'#065f46':p.status==='rejected'?'#991b1b':'#9a3412'}">
+              ${p.status==='verified'?'✅ Verified':p.status==='rejected'?'❌ Rejected':'⏳ Pending'}
+            </span>
+          </td>
+          <td style="display:flex;gap:5px">
+            <button onclick="verifyPayment(${ri},'verified')"  style="background:var(--green);color:#fff;border:none;padding:4px 9px;border-radius:5px;font-size:11px;cursor:pointer">✅</button>
+            <button onclick="verifyPayment(${ri},'rejected')" style="background:var(--red);color:#fff;border:none;padding:4px 9px;border-radius:5px;font-size:11px;cursor:pointer">❌</button>
+          </td>
+        </tr>`;
+      }).join('');
+}
+
+function verifyPayment(idx, status) {
+  const payments = DB.getPayments();
+  if (!payments[idx]) return;
+  payments[idx].status = status;
+  payments[idx].verifiedAt = new Date().toISOString();
+  DB.savePayments(payments);
+  loadPaymentsPanel();
+}
+
+function exportPaymentsCSV() {
+  const payments = DB.getPayments();
+  if (payments.length === 0) { alert('No payments to export yet.'); return; }
+  const header = ['Name','Email','Mobile','Amount','UTR','UPI ID','Date','Status'];
+  const rows   = payments.map(p => [
+    p.name, p.email, p.mobile || '', p.amount, p.utr,
+    p.upi_id || APP_CONFIG.UPI_ID,
+    new Date(p.date).toLocaleString('en-IN'),
+    p.status
+  ]);
+  const csv  = [header, ...rows].map(r => r.map(c => `"${String(c).replace(/"/g,'""')}"`).join(',')).join('\n');
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const a    = document.createElement('a');
+  a.href     = URL.createObjectURL(blob);
+  a.download = `SFS_Payments_${new Date().toISOString().slice(0,10)}.csv`;
+  a.click();
+}
+
+// ══════════════════════════════════════════════
+// SETTINGS PANEL — show live config values
+// ══════════════════════════════════════════════
+function loadSettingsPanel() {
+  const upiEl    = document.getElementById('cfg-upi');
+  const nameEl   = document.getElementById('cfg-upi-name');
+  const priceEl  = document.getElementById('cfg-price');
+  const sheetEl  = document.getElementById('cfg-sheets-status');
+  const warnEl   = document.getElementById('cfg-warning');
+  if (upiEl)   upiEl.textContent   = APP_CONFIG.UPI_ID;
+  if (nameEl)  nameEl.textContent  = APP_CONFIG.UPI_NAME;
+  if (priceEl) priceEl.textContent = '₹' + APP_CONFIG.REPORT_PRICE;
+  const sheetsOk = APP_CONFIG.SHEETS_WEBHOOK !== 'YOUR_APPS_SCRIPT_WEBHOOK_URL';
+  if (sheetEl) {
+    sheetEl.textContent = sheetsOk ? '✅ Connected' : '❌ Not configured';
+    sheetEl.style.color = sheetsOk ? 'var(--green)' : 'var(--red)';
+  }
+  if (warnEl) warnEl.style.display = sheetsOk ? 'none' : 'block';
+}
+
+function copyAppsScript() {
+  const code = document.getElementById('apps-script-code')?.textContent || '';
+  navigator.clipboard?.writeText(code).then(() => {
+    const btn = document.getElementById('copy-as-btn');
+    if (btn) { btn.textContent = '✅ Copied!'; setTimeout(() => btn.textContent = '📋 Copy Script', 2500); }
+  });
+}
+
+
+// ══════════════════════════════════════════════
 // INIT — Check existing session on page load
-// THE LOGIN BUG FIX:
-//   Previously #screen-landing had display:flex inline on the ID
-//   selector, which has higher specificity than .screen{display:none}
-//   so the landing page always showed through. Fixed in CSS above.
-//   Now on load we check localStorage for a saved session and
-//   redirect immediately — landing is hidden by default.
 // ══════════════════════════════════════════════
 (function init() {
   const sess = DB.getSession();
   if (!sess || !sess.email) {
-    // No session — show landing (it's already hidden, make it active)
     showScreen('screen-landing');
     return;
   }
   const users = DB.getUsers();
   const user = users[sess.email];
   if (!user) {
-    // Session refers to deleted user — clear and show landing
     DB.clearSession();
     showScreen('screen-landing');
     return;
   }
-  // Valid session — go straight to the right screen, NEVER show landing
   currentUser = user;
   if (user.role === 'admin') { loadAdminDash(); showScreen('screen-admin'); }
   else { loadUserDash(); showScreen('screen-dashboard'); }
 })();
 </script>
-</body>
-</html>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAYMENT GATE MODAL — ₹199 per report via UPI
+     QR code + UPI ID + UTR verification
+════════════════════════════════════════════════════════════ -->
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+
+<div id="payGateModal" style="display:none;position:fixed;inset:0;background:rgba(10,22,40,.78);z-index:4000;align-items:center;justify-content:center;padding:16px;overflow-y:auto">
+  <div style="background:#fff;border-radius:20px;max-width:500px;width:100%;box-shadow:0 24px 80px rgba(0,0,0,.5);overflow:hidden;margin:auto">
+
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,#0a1628,#1a3460);padding:18px 22px;display:flex;align-items:center;justify-content:space-between">
+      <div>
+        <div style="color:rgba(255,255,255,.5);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:3px">Sekhar Financial Services</div>
+        <h3 style="color:#fff;font-family:'Playfair Display',serif;font-size:18px;margin:0">Unlock Your Report</h3>
+      </div>
+      <button onclick="closePayGate()" style="background:rgba(255,255,255,.1);border:none;color:rgba(255,255,255,.7);width:32px;height:32px;border-radius:50%;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center">✕</button>
+    </div>
+
+    <div style="padding:20px 22px">
+
+      <!-- What you get -->
+      <div style="background:#f8f5ee;border-left:4px solid #c9a84c;border-radius:0 9px 9px 0;padding:12px 14px;margin-bottom:18px;font-size:12px;color:#3d3d5c;line-height:1.85">
+        <strong style="color:#0a1628;font-size:12.5px">📋 Your report includes:</strong><br>
+        ✅ Financial Health Score · ✅ Emergency & Insurance Gap Analysis<br>
+        ✅ MF/ETF/Stock Buy-Hold-Sell signals · ✅ Education SIP Planner<br>
+        ✅ Goal-wise SIP calculator · ✅ 12-point Action Plan · ✅ Tax tips
+      </div>
+
+      <!-- Price -->
+      <div style="text-align:center;margin-bottom:18px">
+        <div style="display:inline-flex;align-items:baseline;gap:6px;background:linear-gradient(135deg,#c9a84c,#e8c878);padding:10px 28px;border-radius:50px">
+          <span style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#0a1628">₹199</span>
+          <span style="font-size:12px;color:rgba(10,22,40,.65)">one-time per report</span>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;border:1.5px solid #e2d9c5;border-radius:9px;overflow:hidden;margin-bottom:18px">
+        <div id="pg-tab-qr"  onclick="_pgSwitchTab('qr')"  style="padding:10px;text-align:center;font-size:12.5px;font-weight:600;cursor:pointer;background:#0a1628;color:#fff;transition:all .2s">📱 Scan QR</div>
+        <div id="pg-tab-upi" onclick="_pgSwitchTab('upi')" style="padding:10px;text-align:center;font-size:12.5px;font-weight:600;cursor:pointer;background:transparent;color:#6b6b8a;transition:all .2s">💳 UPI ID</div>
+        <div id="pg-tab-utr" onclick="_pgSwitchTab('utr')" style="padding:10px;text-align:center;font-size:12.5px;font-weight:600;cursor:pointer;background:transparent;color:#6b6b8a;transition:all .2s">✅ Enter UTR</div>
+      </div>
+
+      <!-- QR panel -->
+      <div id="pg-panel-qr">
+        <div style="text-align:center;padding:8px 0 14px">
+          <div style="display:inline-block;padding:10px;background:#fff;border:2px solid #e2d9c5;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.08)">
+            <canvas id="qrCanvas" width="200" height="200"></canvas>
+          </div>
+          <div style="margin-top:10px;font-size:12px;color:#6b6b8a">Scan with PhonePe · GPay · Paytm · BHIM</div>
+          <div id="pg-upi-show" style="margin-top:5px;font-family:'DM Mono',monospace;font-size:14px;font-weight:700;color:#0a1628"></div>
+          <div style="margin-top:4px;font-size:13px;font-weight:700;color:#c9a84c">Amount: ₹199</div>
+        </div>
+      </div>
+
+      <!-- UPI ID panel -->
+      <div id="pg-panel-upi" style="display:none">
+        <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:18px;text-align:center;margin-bottom:14px">
+          <div style="font-size:11px;font-weight:700;color:#1e40af;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Send ₹199 to this UPI ID</div>
+          <div id="pg-upi-id-text" style="font-family:'DM Mono',monospace;font-size:22px;font-weight:700;color:#0a1628;letter-spacing:.5px;word-break:break-all"></div>
+          <button onclick="pgCopyUPI()" style="margin-top:12px;background:#0a1628;color:#fff;border:none;padding:8px 20px;border-radius:7px;font-size:12.5px;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600">📋 Copy UPI ID</button>
+          <div id="pg-copy-confirm" style="display:none;color:#065f46;font-size:11.5px;margin-top:6px;font-weight:600">✓ Copied to clipboard!</div>
+        </div>
+        <div style="background:#fefce8;border:1px solid #fde047;border-radius:8px;padding:10px 13px;font-size:12px;color:#713f12;text-align:center">
+          After paying, go to <strong>Enter UTR tab</strong> and enter your transaction ID
+        </div>
+      </div>
+
+      <!-- UTR panel -->
+      <div id="pg-panel-utr" style="display:none">
+        <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:9px;padding:13px 15px;margin-bottom:14px;font-size:12.5px;color:#14532d">
+          ✅ Paid? Enter the <strong>UTR / Transaction ID</strong> from your UPI app (usually 12 digits). Your report generates instantly.
+        </div>
+        <div style="margin-bottom:14px">
+          <label style="font-size:10.5px;font-weight:700;color:#3d3d5c;text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:6px">UTR / Transaction ID *</label>
+          <input id="pg-utr" type="text" placeholder="e.g. 425612345678" maxlength="22"
+            style="width:100%;padding:12px 14px;border:2px solid #e2d9c5;border-radius:8px;font-size:16px;font-family:'DM Mono',monospace;outline:none;letter-spacing:.5px;transition:.2s"
+            onfocus="this.style.borderColor='#c9a84c'" onblur="this.style.borderColor='#e2d9c5'"
+            onkeydown="if(event.key==='Enter')handlePayGate()">
+        </div>
+        <div style="font-size:11.5px;color:#6b6b8a;margin-bottom:14px">
+          📱 Find UTR in: GPay → Transaction history → Details &nbsp;|&nbsp; PhonePe → History → See details
+        </div>
+      </div>
+
+      <!-- Action button -->
+      <button id="pg-action-btn" onclick="handlePayGate()"
+        style="width:100%;padding:14px;background:linear-gradient(135deg,#c9a84c,#e8c878);color:#0a1628;font-weight:700;font-size:15px;border:none;border-radius:10px;cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:.2px;margin-top:6px;transition:all .2s">
+        🚀 I've Paid — Generate My Report
+      </button>
+      <p style="font-size:11px;color:#6b6b8a;text-align:center;margin-top:8px">
+        Payment verified instantly · Secure · No refunds after report generation
+      </p>
+
+      <!-- Success -->
+      <div id="pg-success" style="display:none;background:#ecfdf5;border:1px solid #6ee7b7;border-radius:10px;padding:20px;text-align:center;margin-top:12px">
+        <div style="font-size:36px;margin-bottom:8px">✅</div>
+        <div style="font-weight:700;co
